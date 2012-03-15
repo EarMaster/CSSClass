@@ -9,4 +9,4 @@ if (test.hasClass('active'))
 test.removeClass('active glow').toggleClass('golden');
 ```
 
-To keep the className-attribute easily readable (no additional spaces between and around the classes) I use .trim() which is not supported by some older browser (IE8, Safari 4, see http://kangax.github.com/es5-compat-table/). If you target one of these browsers you can use the notrim versions of CSSClass.
+To keep the className-attribute easily readable (no additional spaces between and around the classes) I use .trim() which is not supported by some older browsers (IE8, Safari 4, see http://kangax.github.com/es5-compat-table/). If you target one of these browsers you can use the notrim versions of CSSClass.
