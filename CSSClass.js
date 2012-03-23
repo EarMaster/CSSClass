@@ -8,14 +8,14 @@ if(!p.addClass)
 		c = c.split(' ');
 		for(var i=0; i<c.length; i++)
 			if(!this.hasClass(c[i]))
-				this.className = (this.className+' '+c[i]).trim();
+				this.className = this.className!=''?(this.className+' '+c[i]):c[i];
 		return this;
 	};
 if(!p.removeClass)
 	p.removeClass = function(c) {
 		c = c.split(' ');
 		for(var i=0; i<c.length; i++)
-			this.className = this.className.replace(new RegExp('\\b'+c+'\\b', 'g'), '').trim();
+			this.className = this.className.replace(new RegExp('\\b'+c[i]+'\\b( )?', 'g'), '');
 		return this;
 	};
 if(!p.toggleClass)
