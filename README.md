@@ -8,3 +8,5 @@ if (test.hasClass('active'))
 	test.addClass('glow');
 test.removeClass('active glow').toggleClass('golden');
 ```
+
+If you encounter an error or have a feature suggestion please open a new issue on GitHub (https://github.com/EarMaster/CSSClass/).
