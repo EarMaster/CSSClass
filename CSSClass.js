@@ -1,7 +1,7 @@
 var p = Element.prototype;
 if(!p.hasClass)
 	p.hasClass = function(c) {
-		return new RegExp('\\b'+c+'\\b', 'g').test(this.className);
+		return new RegExp('(^| )'+c+'( |$)', 'g').test(this.className);
 	};
 if(!p.addClass)
 	p.addClass = function(c) {
