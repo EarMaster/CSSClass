@@ -1,6 +1,6 @@
 CSSClass is a JavaScript microframework which adds the functions .hasClass, .addClass, .removeClass and .toggleClass to the Element prototype.
 
-The usage is easy. Include the script file and just use the functions (they can be chained).
+The usage is easy. Include the script file and just use the functions (they can be chained). You can also add, remove, toggle or check for multiple classes by just adding a space between them.
 
 ```javascript
 var test = document.getElementById('test');
