@@ -9,7 +9,7 @@
 	"maintainers": [{
 		"name": "Nico Wiedemann",
 		"email": "nico.wiedemann@gmx.de",
-		"web": "http://www.offen-siv.de",
+		"web": "http://www.offen-siv.de"
 	}],
 	"repository": {
 		"type": "git",
