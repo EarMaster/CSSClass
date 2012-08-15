@@ -1,0 +1,23 @@
+{
+	"name": "CSSClass",
+	"main": "CSSClass.min.js",
+	"description": "A leightweight (0.3kB) extension to the Element prototype to allow checking, adding, removing and toggling classes.",
+	"version": "1.0.3",
+	"keywords": ["css", "class", "classes", "cssclass", "classlist", "ender"],
+	"homepage": "http://earmaster.github.com/CSSClass/",
+	"author": "Nico Wiedemann",
+	"maintainers": [{
+		"name": "Nico Wiedemann",
+		"email": "nico.wiedemann@gmx.de",
+		"web": "http://www.offen-siv.de",
+	}],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/EarMaster/CSSClass"
+	},
+	"bugs": { "web": "https://github.com/EarMaster/CSSClass/issues" },
+	"licenses": {
+		"type": "MIT",
+		"url": "http://opensource.org/licenses/mit-license.php"
+	}
+}
