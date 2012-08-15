@@ -1,5 +1,5 @@
 {
-	"name": "CSSClass",
+	"name": "cssclass",
 	"main": "CSSClass.min.js",
 	"description": "A leightweight (0.3kB) extension to the Element prototype to allow checking, adding, removing and toggling classes.",
 	"version": "1.0.3",
