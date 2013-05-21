@@ -14,3 +14,5 @@ If you encounter an error or have a feature suggestion please open a new issue o
 
 <a href="http://flattr.com/thing/1097666/CSSClass">
 <img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a>
+
+As IE7 and below don't allow access to the Element prototype it will not work on these browsers.
