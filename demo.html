@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<title>CSSClass Test</title>
+		<script src="CSSClass.min.js"></script>
+		<style>
+			.okay {
+				color: green;
+			}
+			.error {
+				color: red!important;
+			}
+			.test {
+				color: orange;
+			}
+			.test.okay {
+				color: red!important;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 id="test" class="error">CSSClass</h1>
+		<p>If the text above is green, everything works fine, if it isn't, something went wrong. Please check your error console.</p>
+		<script>
+			if (document.getElementById('test').hasClass('error'))
+				document.getElementById('test').removeClass('error').toggleClass('test').toggleClass('test okay');
+		</script>
+	</body>
+</html>

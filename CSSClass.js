@@ -1,9 +1,18 @@
+// add indexOf to Array prototype for IE<8
+// this isn't failsafe, but it works on our behalf
+Array.prototype.CSSClassIndexOf = Array.prototype.indexOf || function (item) {
+	var length = this.length;
+	for (var i = 0; i<length; i++)
+		if (this[i]===item) return i;
+	return -1;
+};
+// actual Element prototype manipulation
 var p = Element.prototype;
 if(!p.hasClass)
 	p.hasClass = function(c) {
 		var r = true, e = this.className.split(' '); c = c.split(' ');
 		for(var i=0; i<c.length; i++)
-			if(e.indexOf(c[i])===-1)
+			if(e.CSSClassIndexOf(c[i])===-1)
 				r = false;
 		return r;
 	};
@@ -20,7 +29,7 @@ if(!p.removeClass)
 		var e = this.className.split(' '); c = c.split(' ');
 		for(var i=0; i<c.length; i++)
 			if(this.hasClass(c[i]))
-				e.splice(e.indexOf(c[i]), 1);
+				e.splice(e.CSSClassIndexOf(c[i]), 1);
 		this.className = e.join(' ');
 		return this;
 	};
