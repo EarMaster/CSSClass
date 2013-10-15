@@ -10,6 +10,8 @@ if (test.hasClass('active'))
 test.removeClass('active glow').toggleClass('golden');
 ```
 
+CSSClass now uses the classList interface if available.
+
 If you encounter an error or have a feature suggestion please open a new issue on GitHub (https://github.com/EarMaster/CSSClass/).
 
 <a href="http://flattr.com/thing/1097666/CSSClass">
