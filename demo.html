@@ -3,6 +3,19 @@
 		<title>CSSClass Test</title>
 		<script src="CSSClass.min.js"></script>
 		<style>
+			h1:after {
+				color: silver;
+				content: " Classes: "attr(class);
+				font-size: 0.5em;
+			}
+			label {
+				line-height: 2;
+			}
+			input {
+				border: none;
+				border-bottom: solid 1px silver;
+				font-family: monospace;
+			}
 			.okay {
 				color: green;
 			}
@@ -20,9 +33,25 @@
 	<body>
 		<h1 id="test" class="error">CSSClass</h1>
 		<p>If the text above is green, everything works fine, if it isn't, something went wrong. Please check your error console.</p>
+		<p>Just enter some classnames in the boxes below and press enter. The small text behind the heading indicates which classes are present.</p>
+		<label>addClass(<input type="text" id="addClass" />);</label><br />
+		<label>removeClass(<input type="text" id="removeClass" />);</label><br />
+		<label>toggleClass(<input type="text" id="toggleClass" />);</label><br />
+		<label>hasClass(<input type="text" id="hasClass" />);</label><br />
 		<script>
 			if (document.getElementById('test').hasClass('error'))
 				document.getElementById('test').removeClass('error').toggleClass('test').toggleClass('test okay');
+			document.onkeyup = function (event) {
+				if (event.keyCode==13) {
+					switch (document.activeElement.id) {
+						case 'addClass': document.getElementById('test').addClass(document.activeElement.value); break;
+						case 'removeClass': document.getElementById('test').removeClass(document.activeElement.value); break;
+						case 'toggleClass': document.getElementById('test').toggleClass(document.activeElement.value); break;
+						case 'hasClass': alert(document.getElementById('test').hasClass(document.activeElement.value)); break;
+					}
+					document.activeElement.value = '';
+				}
+			}
 		</script>
 	</body>
 </html>
