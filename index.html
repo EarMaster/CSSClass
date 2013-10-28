@@ -31,17 +31,27 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <p>CSSClass is a JavaScript microframework which adds the functions .hasClass, .addClass, .removeClass and .toggleClass to the Element prototype.</p>
+        <h1>
+<a name="cssclass" class="anchor" href="#cssclass"><span class="octicon octicon-link"></span></a>CSSClass</h1>
 
-<p>The usage is easy. Include the script file and just use the functions (they can be chained).</p>
+<p>CSSClass is a JavaScript microframework which adds the functions .hasClass, .addClass, .removeClass and .toggleClass to the Element prototype.</p>
 
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">test</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span>
+<p>The usage is easy. Include the script file and just use the functions (they can be chained). You can also add, remove, toggle or check for multiple classes by just adding a space between them.</p>
+
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">test</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">test</span><span class="p">.</span><span class="nx">hasClass</span><span class="p">(</span><span class="s1">'active'</span><span class="p">))</span>
     <span class="nx">test</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">'glow'</span><span class="p">);</span>
 <span class="nx">test</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">'active glow'</span><span class="p">).</span><span class="nx">toggleClass</span><span class="p">(</span><span class="s1">'golden'</span><span class="p">);</span>
 </pre></div>
 
+<p>CSSClass now uses the classList interface if available.</p>
+
 <p>If you encounter an error or have a feature suggestion please open a new issue on GitHub (<a href="https://github.com/EarMaster/CSSClass/">https://github.com/EarMaster/CSSClass/</a>).</p>
+
+<p><a href="http://flattr.com/thing/1097666/CSSClass">
+<img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a></p>
+
+<p>As IE7 and below don't allow access to the Element prototype it will not work on these browsers.</p>
       </section>
     </div>
 
