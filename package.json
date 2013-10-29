@@ -2,7 +2,7 @@
 	"name": "cssclass",
 	"main": "CSSClass.min.js",
 	"description": "A leightweight (0.3kB) extension to the Element prototype to allow checking, adding, removing and toggling classes.",
-	"version": "1.0.3",
+	"version": "1.1.0",
 	"keywords": ["css", "class", "classes", "cssclass", "classlist", "ender"],
 	"homepage": "http://earmaster.github.com/CSSClass/",
 	"author": "Nico Wiedemann",
