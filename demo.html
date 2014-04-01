@@ -39,15 +39,15 @@
 		<label>toggleClass(<input type="text" id="toggleClass" />);</label><br />
 		<label>hasClass(<input type="text" id="hasClass" />);</label><br />
 		<script>
-			if (document.getElementById('test').hasClass('error'))
-				document.getElementById('test').removeClass('error').toggleClass('test').toggleClass('test okay');
+			if (document.querySelector('#test').hasClass('error'))
+				document.querySelector('#test').removeClass('error').toggleClass('test').toggleClass('test okay');
 			document.onkeyup = function (event) {
 				if (event.keyCode==13) {
 					switch (document.activeElement.id) {
-						case 'addClass': document.getElementById('test').addClass(document.activeElement.value); break;
-						case 'removeClass': document.getElementById('test').removeClass(document.activeElement.value); break;
-						case 'toggleClass': document.getElementById('test').toggleClass(document.activeElement.value); break;
-						case 'hasClass': alert(document.getElementById('test').hasClass(document.activeElement.value)); break;
+						case 'addClass': document.querySelector('#test').addClass(document.activeElement.value); break;
+						case 'removeClass': document.querySelector('#test').removeClass(document.activeElement.value); break;
+						case 'toggleClass': document.querySelector('#test').toggleClass(document.activeElement.value); break;
+						case 'hasClass': alert(document.querySelector('#test').hasClass(document.activeElement.value)); break;
 					}
 					document.activeElement.value = '';
 				}
