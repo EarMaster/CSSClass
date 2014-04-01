@@ -10,7 +10,8 @@ if (test.hasClass('active'))
 test.removeClass('active glow').toggleClass('golden');
 ```
 
-document.querySelector and document.querySelectorAll are also supported. If you use querySelectorAll and .hasClass you can state in the second argument if you want all elements to pass the test (defaults to true).
+document.querySelector and document.querySelectorAll are supported. If you use querySelectorAll and .hasClass you can state in the second argument if you want all elements to pass the test (defaults to true).
+CSSClass also uses the classList interface if available.
 
 If you encounter an error or have a feature suggestion please open a new issue on GitHub (https://github.com/EarMaster/CSSClass/).
 
