@@ -63,4 +63,27 @@
 					this.addClass(c[i]);
 			return this;
 		};
+	var pl = NodeList.prototype;
+	if (!pl.hasClass)
+		pl.hasClass = function (c, all) {
+			if (all===undefined) all = true;
+			for (var i=0, r=all?true:false; ((all && r===true) || (!all && r===false)) && i<this.length; ++i)
+				r = this[i].hasClass(c);
+			return r;
+		};
+	if (!pl.addClass)
+		pl.addClass = function (c) {
+			for (var i=0; i<this.length; ++i)
+				this[i].addClass(c);
+		};
+	if (!pl.removeClass)
+		pl.removeClass = function (c) {
+			for (var i=0; i<this.length; ++i)
+				this[i].removeClass(c);
+		};
+	if (!pl.toggleClass)
+		pl.toggleClass = function (c) {
+			for (var i=0; i<this.length; ++i)
+				this[i].toggleClass(c);
+		};
 })();
