@@ -11,58 +11,79 @@
 	var cl = ("classList" in document.createElement("a"));
 	// actual Element prototype manipulation
 	var p = Element.prototype;
-	if(!p.hasClass)
-		p.hasClass = function(c) {
-			var r = true, e = cl?Array.prototype.slice.call(this.classList):this.className.split(' ');
-			c = c.split(' ');
-			for(var i=0; i<c.length; i++) {
-				if(cl) {
+	if(cl) {
+		if(!p.hasClass)
+			p.hasClass = function(c) {
+				var r = true, e = Array.prototype.slice.call(this.classList);
+				c = c.split(' ');
+				for(var i=0; i<c.length; i++)
 					if(!this.classList.contains(c[i]))
 						r = false;
-				} else if(e.CSSClassIndexOf(c[i])===-1)
-					r = false;
-			}
-			return r;
-		};
-	if(!p.addClass)
-		p.addClass = function(c) {
-			c = c.split(' ');
-			for(var i=0; i<c.length; i++)
-				if(!this.hasClass(c[i])) {
-					if(cl)
+				return r;
+			};
+		if(!p.addClass)
+			p.addClass = function(c) {
+				c = c.split(' ');
+				for(var i=0; i<c.length; i++)
+					if(!this.hasClass(c[i]))
 						this.classList.add(c[i]);
-					else
-						this.className = this.className!==''?(this.className+' '+c[i]):c[i];
-				}
-			return this;
-		};
-	if(!p.removeClass)
-		p.removeClass = function(c) {
-			var e = this.className.split(' ');
-			c = c.split(' ');
-			for(var i=0; i<c.length; i++)
-				if(this.hasClass(c[i])) {
-					if (cl)
+				return this;
+			};
+		if(!p.removeClass)
+			p.removeClass = function(c) {
+				var e = this.className.split(' ');
+				c = c.split(' ');
+				for(var i=0; i<c.length; i++)
+					if(this.hasClass(c[i]))
 						this.classList.remove(c[i]);
-					else
-						e.splice(e.CSSClassIndexOf(c[i]), 1);
-				}
-			if (!cl)
-				this.className = e.join(' ');
-			return this;
-		};
-	if(!p.toggleClass)
-		p.toggleClass = function(c) {
-			c = c.split(' ');
-			for(var i=0; i<c.length; i++)
-				if (cl)
+				return this;
+			};
+		if(!p.toggleClass)
+			p.toggleClass = function(c) {
+				c = c.split(' ');
+				for(var i=0; i<c.length; i++)
 					this.classList.toggle(c[i]);
-				else if (this.hasClass(c[i]))
-					this.removeClass(c[i]);
-				else
-					this.addClass(c[i]);
-			return this;
-		};
+				return this;
+			};
+	} else {
+		if(!p.hasClass)
+			p.hasClass = function(c) {
+				var r = true, e = this.className.split(' ');
+				c = c.split(' ');
+				for(var i=0; i<c.length; i++)
+					if(e.CSSClassIndexOf(c[i])===-1)
+						r = false;
+				return r;
+			};
+		if(!p.addClass)
+			p.addClass = function(c) {
+				c = c.split(' ');
+				for(var i=0; i<c.length; i++)
+					if(!this.hasClass(c[i]))
+						this.className = this.className!==''?(this.className+' '+c[i]):c[i];
+				return this;
+			};
+		if(!p.removeClass)
+			p.removeClass = function(c) {
+				var e = this.className.split(' ');
+				c = c.split(' ');
+				for(var i=0; i<c.length; i++)
+					if(this.hasClass(c[i]))
+						this.classList.remove(c[i]);
+				this.className = e.join(' ');
+				return this;
+			};
+		if(!p.toggleClass)
+			p.toggleClass = function(c) {
+				c = c.split(' ');
+				for(var i=0; i<c.length; i++)
+					if (this.hasClass(c[i]))
+						this.removeClass(c[i]);
+					else
+						this.addClass(c[i]);
+				return this;
+			};
+	}
 	var pl = NodeList.prototype;
 	if (!pl.hasClass)
 		pl.hasClass = function (c, all) {
