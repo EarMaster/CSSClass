@@ -69,7 +69,7 @@
 				c = c.split(' ');
 				for(var i=0; i<c.length; i++)
 					if(this.hasClass(c[i]))
-						this.classList.remove(c[i]);
+						e.splice(e.CSSClassIndexOf(c[i]), 1);
 				this.className = e.join(' ');
 				return this;
 			};
