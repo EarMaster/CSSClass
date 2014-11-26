@@ -14,12 +14,12 @@
 	if(cl) {
 		if(!p.hasClass)
 			p.hasClass = function(c) {
-				var r = true, e = Array.prototype.slice.call(this.classList);
+				var e = Array.prototype.slice.call(this.classList);
 				c = c.split(' ');
 				for(var i=0; i<c.length; i++)
 					if(!this.classList.contains(c[i]))
-						r = false;
-				return r;
+						return false;
+				return true;
 			};
 		if(!p.addClass)
 			p.addClass = function(c) {
@@ -48,12 +48,12 @@
 	} else {
 		if(!p.hasClass)
 			p.hasClass = function(c) {
-				var r = true, e = this.className.split(' ');
+				var e = this.className.split(' ');
 				c = c.split(' ');
 				for(var i=0; i<c.length; i++)
 					if(e.CSSClassIndexOf(c[i])===-1)
-						r = false;
-				return r;
+						return false;
+				return true;
 			};
 		if(!p.addClass)
 			p.addClass = function(c) {
@@ -88,9 +88,12 @@
 	if (!pl.hasClass)
 		pl.hasClass = function (c, all) {
 			if (all===undefined) all = true;
-			for (var i=0, r=all?true:false; ((all && r===true) || (!all && r===false)) && i<this.length; ++i)
-				r = this[i].hasClass(c);
-			return r;
+			for (var i=this.length-1; i>=0; --i) {
+				var hc = this[i].hasClass(c)l
+				if (all && !hc) return false;
+				if (!all && hc) return true;
+			}
+			return true;
 		};
 	if (!pl.addClass)
 		pl.addClass = function (c) {
