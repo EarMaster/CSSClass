@@ -89,7 +89,7 @@
 		pl.hasClass = function (c, all) {
 			if (all===undefined) all = true;
 			for (var i=this.length-1; i>=0; --i) {
-				var hc = this[i].hasClass(c)l
+				var hc = this[i].hasClass(c);
 				if (all && !hc) return false;
 				if (!all && hc) return true;
 			}
