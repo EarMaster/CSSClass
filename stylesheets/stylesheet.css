@@ -3,7 +3,7 @@ Slate Theme for GitHub Pages
 by Jason Costello, @jsncostello
 *******************************************************************************/
 
-@import url(pygment_trac.css);
+@import url(github-light.css);
 
 /*******************************************************************************
 MeyerWeb Reset
@@ -37,9 +37,6 @@ footer, header, hgroup, menu, nav, section {
 
 ol, ul {
   list-style: none;
-}
-
-blockquote, q {
 }
 
 table {
@@ -151,6 +148,15 @@ img {
   -ms-box-shadow: 0 0 5px #ebebeb;
 }
 
+p img {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  text-align: center;
+  border: none;
+}
+
 pre, code {
   width: 100%;
   color: #222;
@@ -162,9 +168,6 @@ pre, code {
   border-radius: 2px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
-
-
-
 }
 
 pre {
@@ -192,17 +195,20 @@ blockquote {
   border-left: 3px solid #bbb;
 }
 
+
 ul, ol, dl {
   margin-bottom: 15px
 }
 
-ul li {
-  list-style: inside;
+ul {
+  list-style-position: inside;
+  list-style: disc;
   padding-left: 20px;
 }
 
-ol li {
-  list-style: decimal inside;
+ol {
+  list-style-position: inside;
+  list-style: decimal;
   padding-left: 20px;
 }
 
